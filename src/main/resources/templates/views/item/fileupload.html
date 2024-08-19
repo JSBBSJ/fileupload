@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/js/fileupload.js"></script>
+
+<style>
+	.btn-file{
+		display:inline-flex;
+		justify-content:center;
+		align-items:center;
+		width: 100px;
+		height: 100px;
+		border: 0.5px dotted #d9d9d9;
+		background-color:#00ffff33;
+		background-size: contain; 
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+</style>
+
+</head>
+<body>
+	<h1>상품등록 페이지</h1>
+	<form action="/admin/items" method="post">
+		<div>
+			<p>메인 이미지</p>
+			<label class="btn-file">
+			<input type="file" id="itemFile" onchange="fileupload(this)" style="display:none;">
+			
+			<input type="hidden" name="bucketkey">
+			<input type="hidden" name="orgName">
+			<span>+</span>
+			</label>
+			<p></p>
+		</div>
+		
+		<div>
+		<p>추가 이미지</p>
+			<label class="btn-file"> 
+			<input type="file" id="itemFile" onchange="fileupload(this)" style="display: none;">
+
+			<input type="hidden" name="bucketkey">
+			<input type="hidden" name="orgName">
+			<span>+</span>
+			</label>
+			<label class="btn-file"> <input type="file" id="itemFile" onchange="fileupload(this)" style="display: none;">
+			<input type="hidden" name="bucketkey">
+			<input type="hidden" name="orgName">
+			<span>+</span>
+			</label>
+			<p>
+			<span>권장 크기: 1000 X 1000*(윈도 대상 750 X 1000), 300 X 300이상</span><br>
+			<span>이미지 확대 기능: 1000 X 1000*(윈도 대상 750 X 1000), 300 X 300이상</span><br>
+			<span>쇼핑검색에 노출되지 않는 경우 도움말 또는 상품검색 SEO 가이드 이미지 참고</span><br>
+			</p>
+		</div>
+		<p><input type="text" name="name" placeholder="상품명"></p>
+		<p><input type="text" name="price" placeholder="상품가격"></p>
+		<button>등록</button>
+	</form>
+</body>
+</html>
